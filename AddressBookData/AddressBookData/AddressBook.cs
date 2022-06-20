@@ -129,5 +129,21 @@ namespace AddressBookData
                 return 0;
             }
         }
+        public int DeleteDataInDataTable(string FirstName)
+        {
+            AddDataInDatatable();
+            var DeleteData = (from ContactList in dataTable.AsEnumerable() where ContactList.Field<string>("FirstName") == FirstName select ContactList).FirstOrDefault();
+            if (DeleteData != null)
+            {
+                DeleteData.Delete();
+                Console.WriteLine("After Deletion");
+                Display();
+                return 1;
+            }
+            else
+            {
+                return 0;
+            }
+        }
     }
 }

@@ -27,5 +27,13 @@ namespace AddressBookTest
             int actual = address.EditInDataTable("Hemant", "Firstname");
             Assert.AreEqual(actual, expected);
         }
+
+        [Test]
+        public void GivenDataTable_DeleteData_InDataTable()
+        {
+            int expected = 1;
+            int actual = address.DeleteDataInDataTable("Mohan");
+            Assert.AreEqual(actual, expected);
+        }
     }
 }
