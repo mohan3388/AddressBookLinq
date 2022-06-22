@@ -35,5 +35,12 @@ namespace AddressBookTest
             int actual = address.DeleteDataInDataTable("Mohan");
             Assert.AreEqual(actual, expected);
         }
+        [Test]
+        public void GivenDataTable_Retrieve_The_Data_Person_Belonging_City_Or_State()
+        {
+            string expected = "Mohan sahu";
+            string actual = address.RetrieveBasedOnCityorState("Bhilai", "CG");
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
