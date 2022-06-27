@@ -48,6 +48,15 @@ namespace AddressBookTest
             string expected = "1 1 ";
             string actual = address.RetrieveCountBasedOnCityorState();
             Assert.AreEqual(expected, actual);
+
+
+        }
+        [Test]
+        public void GivenSortQuery_BasedOnCityandState_returnString()
+        {
+            string expected = "Mohan";
+            string actual = address.SortBasedOnNameInDataTable("Bemetara");
+            Assert.AreEqual(expected, actual);
         }
     }
 }
